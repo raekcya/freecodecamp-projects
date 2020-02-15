@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikipedia page(demo)</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./test-2.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+  <style>
+    @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://example.com/MaterialIcons-Regular.eot);
+      /* For IE6-8 */
+      src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+        url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+        url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+    }
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      /* Preferred icon size */
+      display: inline-block;
+      /* perhaps changed here --go check for google icons to see the widths.*/
+      line-height: 1.5rem;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      /* here this was added by me to align items in flex box to align with the other texts. */
+      align-self: end;
+      /* Support for all WebKit browsers. */
+      -webkit-font-smoothing: antialiased;
+      /* Support for Safari and Chrome. */
+      text-rendering: optimizeLegibility;
+      /* Support for Firefox. */
+      -moz-osx-font-smoothing: grayscale;
+      /* Support for IE. */
+      font-feature-settings: 'liga';
+    }
+    .form-control {
+      font-family: "FontAwesome"
+    }
+    .nav-tabs {
+      border-bottom: none;
+    }
+    #article-tabs {
+      padding-left: 0px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="vertical-nav bg-light">
+    <!-- image section here -->
+    <div class="media d-flex align-items-center bg-light mt-0 w-100 h-auto justify-content-center">
+      <img src="https://en.wikipedia.org/static/images/project-logos/enwiki.png" alt="wikipedia logo">
+    </div>
+    <!-- image section ends -->
+    <ul class="nav flex-column mb-5">
+      <li class="nav-item "><a href="#" class="nav-link py-0 pr-0">Main Page</a></li>
+      <li class="nav-item "><a href="#" class="nav-link py-0 pr-0">Contents</a></li>
+      <li class="nav-item "><a href="#" class="nav-link py-0 pr-0">Featured Contents</a></li>
+      <li class="nav-item "><a href="#" class="nav-link py-0 pr-0">Current Events</a></li>
+      <li class="nav-item "><a href="#" class="nav-link py-0 pr-0">Random Articles</a></li>
+      <li class="nav-item "><a href="#" class="nav-link py-0 pr-0">Donate to Wikipedia</a></li>
+      <li class="nav-item "><a href="#" class="nav-link py-0 pr-0">Wikipedia Store</a></li>
+
+
+      <p class="text-muted ml-3 mt-3 mb-0">Interaction</p>
+      <div class="border-bottom"></div>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Help</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">About Wikipedia</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Community Portal</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Recent Changes</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Contact Page</a></li>
+
+      <p class="text-muted ml-3 mt-3 mb-0">Tools</p>
+      <div class="border-bottom"></div>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">What links here</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Related changes</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Upload files</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Special pages</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Permanent links</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Page information</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Wikipedia items</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Cite this page</a></li>
+
+      <p class="text-muted ml-3 mt-3 mb-0">In other projects</p>
+      <div class="border-bottom"></div>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Wikiquote</a></li>
+
+      <p class="text-muted ml-3 mt-3 mb-0">Print/Export</p>
+      <div class="border-bottom"></div>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Download as pdf</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">print this page</a></li>
+
+      <p class="text-muted ml-3 mt-3 mb-0">Languages</p>
+      <div class="border-bottom"></div>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Español</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">فارسی</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Français</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">한국어</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Italiano</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">日本語</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Português</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">Русский</a></li>
+      <li class="nav-item"><a href="#" class="nav-link py-0 pr-0">中文</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row justify-content-end">
+      <i class="material-icons">person</i>
+      <div class="mr-3"> Not logged-in</div>
+      <a class="mr-3" href="#">Contributions</a>
+      <a class="mr-3" href="#">Create Account</a>
+      <a class="mr-3" href="#">Log in</a>
+      <a class="mr-3" href="#" class="active">Talk</a>
+    </div>
+    <div class="page-content pl-3 border-left">
+      <div class="row mx-0">
+        <div class="col-2" id="article-tabs">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" style="display: inline-block;"><a href="#" class="nav-link active">Article</a></li>
+            <li class="nav-item" style="display: inline-block;"><a href="#" class="nav-link bg-light">Talk</a></li>
+          </ul>
+        </div>
+        <div class="col pr-0">
+          <ul class="nav nav-tabs justify-content-end ">
+            <li class="nav-item"><a href="#" class="nav-link active">Read</a></li>
+            <li class="nav-item"><a href="#" class="nav-link bg-light">Edit</a></li>
+            <li class="nav-item"><a href="#" class="nav-link bg-light">View history</a></li>
+            <form action="#" class="form-inline" method="GET" style="float: right;clear: none;">
+              <label for="searchWiki">
+                <input type="text" class="form-control ml-1" id="searchWiki" placeholder="&#xF002; Search Wikipedia">
+              </label>
+            </form>
+          </ul>
+        </div>
+        <!-- <div class="col">
+          <form action="#" class="form-inline ml-3" method="GET">
+            <label for="searchWiki">Search Wikipedia
+              <input type="text" class="form-control ml-1" id="searchWiki">
+            </label>
+          </form> -->
+      </div>
+
+      <p class="h3">Brightburn (movie)</p>
+      <div class="border-bottom"></div>
+      <p class="text-dark" style="font-size:80%;">from Wikipedia, the free enclyopedia,</p>
+      <div class=" float-right d-flex ml-3 mb-1"
+        style="width: auto; white-space:nowrap; margin-top: 0; position: relative;">
+        <div class="card text-center " style="width: auto;">
+          <b class="m-2 align-content-center justify-content-center">brightburn</b>
+          <img src="//upload.wikimedia.org/wikipedia/en/f/fa/Brightburn_film_poster.png" alt="brightburn poster"
+            class="mx-2">
+          <div style="font-size: 70%;">Theatrical release poster</div>
+
+          <table style="font-size:80%;padding-left: 1rem;">
+            <tbody>
+              <tr>
+                <th style="padding-right: 1rem;white-space: nowrap;vertical-align: top; text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Directed by:</p>
+                </th>
+                <td style="text-align: left;">David Yarovesky</td>
+              </tr>
+              <tr>
+                <th style="padding-right: 1rem;white-space: nowrap;vertical-align: top;text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Produced by:</p>
+                </th>
+                <td>
+                  <ul class="" style="list-style: none;padding-left:0; text-align: left;margin-bottom: 0;">
+                    <li>James Gunn</li>
+                    <li>Kenneth Huang</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th style="padding-right: 1rem;white-space: nowrap;vertical-align: top;text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Written by:</p>
+                </th>
+                <td>
+                  <ul class="" style="list-style: none;padding-left:0; text-align: left;margin-bottom: 0;">
+                    <li>Brian Gunn</li>
+                    <li>Mark Gunn</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th style="padding-right: 1rem;white-space: nowrap;vertical-align: top;text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Starring:</p>
+                </th>
+                <td>
+                  <ul class="" style="list-style: none;padding-left:0; text-align: left;margin-bottom: 0;">
+                    <li><a href="#">Elizabeth Banks</a></li>
+                    <li><a href="#">David Denman</a></li>
+                    <li><a href="#">Jackson A. Dunn</a></li>
+                    <li><a href="#">Matt Jones</a></li>
+                    <li><a href="#">Meredith Hagner</a></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th style="padding-right: 1rem;white-space: nowrap;vertical-align: top; text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Music by:</p>
+                </th>
+                <td style="text-align: left;">Timothi Williams</td>
+              </tr>
+              <tr>
+              <tr>
+                <th style="vertical-align: top;text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Production <br> Companies:</p>
+                </th>
+                <td>
+                  <ul class="" style="list-style: none;padding-left:0; text-align: left;margin-bottom: 0;">
+                    <li>Screen Gems</li>
+                    <li>The H Collective</li>
+                    <li>The Stage 6 Films</li>
+                    <li>Troll court Entertainment</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th style="white-space:wrap;vertical-align: top; text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Release Date:</p>
+                </th>
+                <td style="text-align: left;">May 24, 2019(USA)</td>
+              </tr>
+              <tr>
+                <th style="white-space:wrap;vertical-align: top; text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Budget:</p>
+                </th>
+                <td style="text-align: left;">6-12 Million</td>
+              </tr>
+              <tr>
+                <th style="white-space:wrap;vertical-align: top; text-align: left;">
+                  <p style="margin:0;margin-left:0.3rem">Box Office:</p>
+                </th>
+                <td style="text-align: left;">32.9 Million</td>
+              </tr>
+              <tr>
+
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <p style="font:0.7rem">
+      <i><b>Brightburn</b></i> is a 2019 American <a href="/wiki/Superhero_film" title="Superhero film">superhero</a>
+      <a href="/wiki/Horror_film" title="Horror film">horror film</a> directed by David Yarovesky, written by <a
+        href="/wiki/Mark_Gunn_(screenwriter)" title="Mark Gunn (screenwriter)">Mark Gunn</a> and <a
+        href="/wiki/Brian_Gunn" title="Brian Gunn">Brian Gunn</a>, and produced by <a href="/wiki/James_Gunn"
+        title="James Gunn">James Gunn</a> and <a href="/wiki/Kenneth_Huang" title="Kenneth Huang">Kenneth Huang</a>.
+      It
+      stars <a href="/wiki/Elizabeth_Banks" title="Elizabeth Banks">Elizabeth Banks</a>, <a href="/wiki/David_Denman"
+        title="David Denman">David Denman</a>, Jackson A. Dunn, <a href="/wiki/Matt_Jones_(actor)"
+        title="Matt Jones (actor)">Matt Jones</a> and <a href="/wiki/Meredith_Hagner" title="Meredith Hagner">Meredith
+        Hagner</a>. It follows Brandon Breyer, a young boy of extraterrestrial origin reared on Earth who realizes he
+      has <a href="/wiki/Superpower_(ability)" title="Superpower (ability)">superpowers</a>. Upon learning of them and
+      being <a href="/wiki/Brainwashing" title="Brainwashing">brainwashed</a> by the ship he arrived in, Brandon
+      rejects
+      his humanity and turns to evil, opting to terrorize his hometown, including his parents. The film is produced
+      and
+      financed by <a href="/wiki/Screen_Gems" title="Screen Gems">Screen Gems</a>, <a href="/wiki/Stage_6_Films"
+        title="Stage 6 Films">Stage 6 Films</a>, <a href="/wiki/The_H_Collective" title="The H Collective">The H
+        Collective</a> and Troll Court Entertainment.
+
+    </p>
+
+    <div class="card col-2 bg-light justify-content-center">
+      <div class="card-title text-center">Contents</div>
+      <ol>
+        <li><a href="#plot">plot</a></li>
+        <li><a href="#cast">cast</a></li>
+      </ol>
+
+    </div>
+    <h4 class="border-bottom" id="plot">Plot</h4>
+    <div>
+      <p style="font:0.7rem">In 2006, a spaceship crash-lands in Brightburn, Kansas on a farm owned by Tori and Kyle
+        Breyer, who have been having difficulties conceiving a child. Inside the ship is an infant child which the
+        couple adopt and name Brandon. They hide the spaceship in their barn's cellar to hide the truth from him.
+
+        Years later, the ship begins transmitting an alien message, drawing Brandon to it. He sleepwalks to the barn and
+        tries to open the locked cellar, chanting the craft's message, but Tori intervenes and takes him back to the
+        house. The next day as he attempts to mow the lawn, Brandon has difficulty starting the mower and inadvertently
+        launches it into the air. He approaches it, curious about his newfound strength, and stops the motorized blade
+        with his hand.
+
+        Nearing puberty, Brandon is an extremely high achiever at his school, which other students tease him about but a
+        girl named Caitlyn defends him. While celebrating Brandon's 12th birthday at a diner where Caitlyn's mother,
+        Erica, is the waitress, his uncle Noah and aunt Merilee give him a hunting rifle, which Kyle refuses to let
+        Brandon have. Brandon causes a scene, so Kyle and Tori leave with him. Kyle suspects something is wrong with
+        Brandon and finds him absentmindedly chewing and mangling his fork at breakfast. Tori finds photos of lingerie
+        and swimsuit models, surgical diagrams, and graphic photos of human organs in Brandon's room. Brandon, Kyle, and
+        Tori take a camping trip and Kyle attempts to give Brandon the "talk". That night, Brandon travels to Caitlyn's
+        house, hiding in her room until she notices him. Returning home, Kyle finds their chickens terrified by Brandon,
+        who is standing over them. Later that night, Kyle finds the chickens slaughtered with the coop's locked door
+        torn off its hinges. Kyle insists Brandon was responsible but Tori insists it was a wolf attack.
+
+        During a trust fall exercise at school, Brandon falls towards Caitlyn but she does not catch him, accusing him
+        of being a pervert. When she is forced to help him up, Brandon crushes her hand in retaliation. He is suspended
+        and required to meet with his aunt Merilee, the school counselor, but Erica demands that Brandon be arrested.
+        That night at home, Brandon is drawn to the ship again and he breaks the lock on the cellar door. Tori
+        interrupts him as he levitates above the open cellar, chanting the ship's message, and he falls and cuts himself
+        on the spaceship, the first time he has ever been injured. Tori reveals the truth about his arrival on Earth,
+        and Brandon angrily leaves, finally understanding the ship's message: "Take the world." In his rage, Brandon
+        develops heat vision. Brandon visits Caitlyn with flowers, who tells him that her mother has forbidden her from
+        talking to him. Wearing a red mask and cape, Brandon stalks Erica while she is closing the diner and murders
+        her. Police investigate the scene, finding a symbol looking like two Bs back-to-back drawn on a window, and
+        Erica is nowhere to be found.
+
+        The following day at school, Brandon is meeting with Merilee, who informs him that she is required to report his
+        progress to police, but he threatens her to not do so. That night, Brandon stalks Merilee through her house
+        until she goes to bed. Noah arrives home from the bar with Kyle and friends to find a masked Brandon hiding in
+        the closet and threatens to tell his parents, prompting Brandon to lash out. Terrified, Noah tries to escape in
+        his truck, but Brandon lifts and crashes the vehicle, killing Noah. He uses Noah's blood to draw the same symbol
+        from Erica's murder on the road. Brandon returns home shirtless, telling his parents that other students tore
+        his shirt while playing soccer late after school, but refuses to give it to Tori.
+
+        Merilee calls Kyle and Tori and they rush to the hospital to learn from a grieving Merilee that Brandon had gone
+        to her house, contradicting Brandon's story about playing soccer. The next morning, Tori and Kyle inform Brandon
+        of Noah's death, but Brandon has no reaction, which alarms Tori and angers Kyle. When Kyle accuses Brandon and
+        grabs him, Brandon violently shoves him. Kyle finds Brandon's blood-stained shirt and shows it to Tori, but she
+        refuses to believe Brandon killed Noah.
+
+        Kyle plans a hunting trip as an attempt to kill Brandon. While Brandon is examining deer tracks, Kyle shoots him
+        but the bullet simply bounces off his head. Brandon kills Kyle with his heat vision. Meanwhile, the town sheriff
+        arrives at the Breyers' house and asks Tori to see Brandon. Tori tells the sheriff that Kyle and Brandon aren't
+        home, so he shows Tori the symbol found at the scenes of Erica's and Noah's deaths. Tori claims ignorance,
+        having seen Brandon drawing the symbol before, but then finds Brandon's notebook with disturbing drawings of his
+        murders and his message to "take the world", which brings her to the realization that Kyle was right about
+        Brandon. She attempts to call Kyle, but Brandon answers the phone and informs her that Kyle is gone.
+
+        Brandon returns home and destroys the house as Tori calls the police, but Brandon brutally murders the sheriff
+        and his deputy. Remembering that the ship can injure Brandon, Tori runs to the barn. In the cellar, she finds
+        Erica's mutilated body nailed to a wall and surrounded by symbols in blood. Tori arms herself with a piece of
+        the ship to stab Brandon during an embrace, but fails when Brandon anticipates the attack. Enraged, Brandon
+        flies Tori through the barn roof and above the clouds, and drops her to her death. An airplane flies towards
+        Brandon and the scene goes dark. The next day, police, paramedics, and FBI are at the farm investigating the
+        airplane crash, which killed everyone onboard. News coverage reports that Brandon is the only surviving resident
+        of the area.
+
+        In the mid-credits scene, Brandon begins his worldwide attacks. News reports and a conspiracy theorist discuss
+        assorted destruction in Brightburn, the existence of other super-beings, and pleads with humanity to take
+        action. </p>
+    </div>
+
+    <h4 class="border-bottom" id="cast">Cast</h4>
+    <div style="column-count:2; width:100%;"">
+      <ul>
+        <li><a href=" /wiki/Elizabeth_Banks" title="Elizabeth Banks">Elizabeth Banks</a> as Tori Breyer: Brandon's
+      adoptive mother and Kyle's wife</li>
+      <li><a href="/wiki/David_Denman" title="David Denman">David Denman</a> as Kyle Breyer: Brandon's adoptive father
+        and Tori's husband</li>
+      <li>Jackson A. Dunn as Brandon Breyer / Brightburn: a superpowered alien who is adopted by the Breyer family
+      </li>
+      <li><a href="/wiki/Matt_Jones_(actor)" title="Matt Jones (actor)">Matt Jones</a> as Noah McNichol: Brandon's
+        uncle and Merilee's husband</li>
+      <li><a href="/wiki/Meredith_Hagner" title="Meredith Hagner">Meredith Hagner</a> as Merilee McNichol: Tori's
+        sister, Brandon's aunt and Noah's wife</li>
+      <li>Abraham Clinkscales as Royce: a young boy who bullies Brandon</li>
+      <li>Christian Finlayson as Fauxhawk: one of the kids who bullies Brandon</li>
+      <li>Jennifer Holland as Ms. Espenschied: Brandon's school director</li>
+      <li>Emmie Hunter as Caitlyn Connor: Brandon's love interest</li>
+      <li><a href="/wiki/Becky_Wahlstrom" title="Becky Wahlstrom">Becky Wahlstrom</a> as Erica Connor: Caitlyn's
+        mother who dislikes Brandon</li>
+      <li><a href="/wiki/Gregory_Alan_Williams" title="Gregory Alan Williams">Gregory Alan Williams</a> as Sheriff
+        Deever: a local sheriff of the small town</li>
+      <li>Anne Humphrey as Deputy Aryes: Deever's partner</li>
+      <li><a href="/wiki/Steve_Agee" title="Steve Agee">Steve Agee</a> as EJ</li>
+      <li><a href="/wiki/Stephen_Blackehart" title="Stephen Blackehart">Stephen Blackehart</a> as Travis</li>
+      <li><a href="/wiki/Michael_Rooker" title="Michael Rooker">Michael Rooker</a> as the Big T</li>
+      </ul>
+
+      <div style="padding-bottom:30px"></div>
+    </div>
+  </div>
+
+
+  <div style="margin-left:13rem; text-indent: 1rem; font-size:0.6rem;"
+    class="footer bg-light border-top border-left-light ">
+    </footer>
+    <p> This page was edited on 20 Jan 2020 at 17:11(UTC)</p>
+    <p>Text is available under the <a
+        href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative
+        Commons Attribution-Alike License</a>.additional terms may apply.By using this site, you agree to the <a
+        href="//foundation.wikimedia.org/wiki/Terms_of_Use"></a> and <a
+        href="//foundation.wikimedia.org/wiki/Privacy_policy">Privacy Policy</a>.Wikipedia&reg; is a registered
+      trademark of <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a> a non-profit organization.
+    </p>
+
+    <div class="row">
+      <ul class="nav nav-var">
+        <li class="nav-item ml-3"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy"
+            class="nav-link px-0">Privacy
+            Policy</a></li>
+        <li class="nav-item"><a href="/wiki/Wikipedia:About" class="nav-link">About Wikipedia</a></li>
+        <li class="nav-item"><a href="/wiki/Wikipedia:General_disclaimer" class="nav-link px-0">Disclaimers</a></li>
+        <li class="nav-item"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" class="nav-link px-0">Contact
+            Wikipedia</a></li>
+        <li class="nav-item"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute"
+            class="nav-link px-0">Developers</a></li>
+        <li class="nav-item"><a href="https://stats.wikimedia.org/v2/#/en.wikipedia.org"
+            class="nav-link px-0">Statistics</a></li>
+        <li class="nav-item"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement"
+            class="nav-link px-0">Cookie
+            Statements</a></li>
+        <li class="nav-item"><a href="//en.m.wikipedia.org/w/index.php?title=Brightburn&mobileaction=toggle_view_mobile"
+            class="nav-link px-0">Mobile View</a></li>
+      </ul>
+
+      <div class="col">
+        <ul class="nav nav-bar justify-content-end">
+          <li class="nav-item"><a href="https://wikimediafoundation.org/" class="nav-link px-0"><img
+                src="https://en.wikipedia.org/static/images/wikimedia-button.png" alt="wikimedia logo"></a>
+          <li class="nav-item"><a href="https://www.mediawiki.org/" class="nav-link px-0"><img
+                src="https://en.wikipedia.org/static/images/poweredby_mediawiki_88x31.png"
+                alt="powered by wikimedia logo" style="margin-left:-0.5rem;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

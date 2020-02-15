@@ -1,0 +1,105 @@
+/* fonts imported from google fonts site. */
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Raleway:400,400i&display=swap');
+/* General setup */
+:root{
+    box-sizing: border-box;
+    font-family: 'Lora', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+
+  }
+  
+  /* universal layout */
+  *{
+      box-sizing: border-box;
+    }
+    
+  /* Layout */
+  section {
+    float: left;
+    width: 50%;
+  }
+  
+  aside {
+    float: left;
+    width: 30%;
+  }
+  
+  nav {
+    float: left;
+    width: 20%;
+  }
+  
+  footer {
+    clear: both;
+  }
+  
+  header, section, aside, nav, footer {
+    padding: 20px;
+  }
+  
+  /* header and footer */
+  
+  header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+  }
+  
+  /* WRITE YOUR CODE BELOW HERE */
+  header, footer{
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+  }
+
+  body{
+      font-size: 1.6rem;
+      line-height: 2.7rem;
+      letter-spacing: 0.13rem;
+      word-spacing: 0.5rem;
+  }
+
+  header{
+      letter-spacing: 0.3rem;
+      text-shadow: 3px 3px 4px rgb(131, 119, 119),
+                   -3px 3px 4px rgb(175, 153, 153);
+  }
+
+  section > p{
+      text-indent: 2rem;
+  }
+  /* the links modifications here */
+  .li-a{
+      line-height: 3rem;
+      display: block;
+      background: linear-gradient(to left,rgb(131, 119, 119), rgb(248, 142, 142) );
+      margin: 0.4rem;
+      padding: 0.8rem;
+      box-sizing: border-box;
+      text-align: center;
+      color: brown;
+      transition: background-color 1s;
+  }
+
+  .li-a:link{
+        text-decoration: none;
+  }
+
+  .li-a:hover{
+    background-color: red;  
+  }
+
+  ul li a {
+    width: 20vw;
+  }
+
+  nav li a{
+
+    width: calc(100% - 40px);
+  }
+

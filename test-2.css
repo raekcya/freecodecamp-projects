@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.vertical-nav{
+    min-width: 1;
+    width: calc(14rem - 1px);;
+    position: fixed;
+    overflow-y: auto; /*makes navbar scrollable */
+    display: block;
+     height: 100%;/*this one to give scroll bar max height for scrolling  */
+}
+
+.page-content
+{
+    width: calc(100% - 13rem);
+    margin-left: 13rem;
+}
+
+#login-logo{
+    background-image: url("https://en.wikipedia.org/w/skins/Vector/images/user-avatar.svg");
+    background-repeat: no-repeat;
+    background-position: left 3.3333px;
+    background-size: 1.33px 1.33px;
+}
