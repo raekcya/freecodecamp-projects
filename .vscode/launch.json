@@ -5,12 +5,14 @@
     "version": "0.2.0",
     "configurations": [
 
+
+
         {
-            "name": "Launch calculator.html",
+            "name": "Launch trying.html",
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "file": "${workspaceFolder}/calculator.html"
+            "file": "${workspaceFolder}/trying.html"
         },
         {
             "name": "Launch localhost",

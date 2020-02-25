@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+
+  <title>Calculator jquery</title>
+  <style>
+    body{
+      background-color: blueviolet;
+    }
+    .row-1 {
+      height: auto;
+    }
+
+    .calculator {
+      height: auto;
+      width: auto;
+    }
+
+    .button {
+      display: inline-flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background: #444;
+      color: rgba(0,204,255,1);
+      border: none;
+
+    }
+
+
+    .button:hover {
+      background-color: gray;
+      color: white;
+      text-decoration: none;
+      border-style: none;
+    }
+    .button:active {
+      background-color: black;
+      border-style: none;                                                 
+    }
+
+    .table .tablecell {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      height: 25%;
+      width: 20%;
+      background: #444;
+      font-size: 1.5rem;
+      font-family: "fira code";
+      padding: 0;
+    }
+
+    .table-bordered td {
+      border: black solid 1px;
+    }
+
+    .table td {
+      width: 20%;
+    }
+
+
+    #display {
+      text-align: right;
+      font-size: 2rem;
+    }
+
+    .display-1 {
+      text-shadow: 3px 3px lightgrey;
+    }
+
+
+
+
+    #ac {
+      background: #ff3333;
+    }
+
+    #ac:hover {
+      background-color: grey;
+    }
+
+    #ac:active {
+      background-color: black;
+    }
+
+    #display-2 {
+      font: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row m-0 p-0 justify-content-center">
+    <div class="display-1">Calculator</div>
+  </div>
+  <div class="row justify-content-center m-0">
+    <div class="subtitle">designed by Rajesh Kumar</div>
+  </div>
+  <div class="calculator">
+    <div class="row justify-content-center p-0 row-1" style="margin:0;margin-top:3rem;margin-bottom:1rem">
+      <form class="form m-0 p-0" action="" name="form" style="width:600px;">
+        <div class="form-group m-0 p-0">
+          <input class="form-control" id="display" style="height:100%;font-size:1.5rem;" autofocus> </input>
+          <input class="form-control" id="display-sec" style="height:100%;" autofocus> </input>
+        </div>
+
+      </form>
+    </div>
+    <div class="row justify-content-center m-0">
+      <table class="table table-bordered" style="width:600px;height:300px;background: #444;">
+        <td class="tablecell"><button class="button" onclick="insert(7)">7</button></td>
+        <td class="tablecell"><a href="#eight" class="button" id="eight" onclick="insert(8)">8</a></td>
+        <td class="tablecell"><a href="#nine" class="button" id="nine" onclick="insert(9)">9</a></td>
+        <td class="tablecell"><a href="#divide" class="button" id="divide" onclick="insert('/')">%</a></td>
+        <td class="tablecell"><a href="#delete" class="button" id="delete" onclick="delAChar()">DEL</a></td>
+        <tr>
+
+          <td class="tablecell"><a class="button" role="button" id="four" onclick="insert(4)">4</a></td>
+          <td class="tablecell"><a href="#five" class="button" id="five" onclick="insert(5)">5</a></td>
+          <td class="tablecell"><a href="#six" class="button" id="six" onclick="insert(6)">6</a></td>
+          <td class="tablecell"><a href="#multiply" class="button" id="multiply" onclick="insert('*')">x</a></td>
+          <td class="tablecell"><a href="#clear" class="button" id="ac" onclick="reset()">AC</a></td>
+        </tr>
+        <tr>
+          <td class="tablecell"><a href="#one" class="button" id="seven" onclick="insert(1)">1</a></td>
+          <td class="tablecell"><a href="#two" class="button" id="eight" onclick="insert(2)">2</a></td>
+          <td class="tablecell"><a href="#three" class="button" id="nine" onclick="insert(3)">3</a></td>
+          <td class="tablecell"><a href="#add" class="button" id="div" onclick="insert('+')">+</a></td>
+          <td class="tablecell"><a href="#left-bracket" class="button" id="left-bracket" onclick="insert('(')">(</a></td>
+
+          </td>
+        </tr>
+        </tr>
+        <tr>
+          <td class="tablecell"><a href="#zero" class="button" id="zero" onclick="insert(0)">0</a></td>
+          <td class="tablecell"><a href="#decimal" class="button" id="eight" onclick="insert('.')">.</a></td>
+          <td class="tablecell" id="equal"><a href="#equals" class="button" id="div" onclick="eql()">=</a>
+          <td class="tablecell"><a href="#subtract" class="button" id="nine" onclick="insert('-')">-</a></td>
+          <td class="tablecell"><a href="#right-bracket" class="button" id="right-bracket" onclick="insert(')')">)</a></td>
+
+      </table>
+    </div>
+  </div>
+
+
+
+  <script src="files/jquery-3.4.1.slim.min.js"></script>
+  <script src="files/popper.min.js"></script>
+  <script src="./bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+  <script>
+    $().ready(() => {
+      if (pastOperator != undefined) {
+        $('#display').val('');
+      }
+
+    })
+
+    let pastOperator;
+    let num = 0;
+    function insert(num) {
+      $('#display').val($('#display').val() + num);
+      $('#display-sec').val(eval($('#display').val()));
+    }
+
+    function eql() {
+      let exp = $('#display').val();
+      $('#display').val('');
+      $('#display').val(eval(exp));
+    }
+
+    function reset() {
+      $('#display').val(0);
+      $('#display-sec').val(eval($('#display').val()));
+
+    }
+
+    function delAChar() {
+      let value = $('#display').val();
+      $('#display').val(value.substring(0, value.length - 1));
+      $('#display-sec').val(eval($('#display').val()));
+    }
+
+
+  </script>
+</body>
+
+
+</html>
