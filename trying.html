@@ -124,132 +124,136 @@
 	<script src="./bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
 	<script src="./radialIndicator-master/src/radialIndicator.js"></script>
 	<script>
+		$(document).ready(
+			() => {
 
 
-		let remainingHours = 0;
-		let session_seconds = 0;
-		var break_minutes = 5;
-		var session_minutes = 25;
-		var lengthOfSession;
-		var remainingLength;
-		var endSession;
-		var remainingLength;
-		var remainingMinutes;
-		var remainingSeconds;
-		let remainingMilliseconds;
-		let x;
-		let string;
-		let paused = false;
-		function seconds(second) {
-			if (second < 10) {
-				return "0" + second;
-			}
-			return second;
-		}
-
-		//function to display remainingMinutes
-		function minutes(minute) {
-			if (minute < 10) {
-				return "0" + minute;
-			}
-			return minute;
-		}
-		//function to calculate, and display time 
-		function showTime() {
-			x = setInterval(() => {
-
-				remainingLength = endSession - $.now();
-
-				remainingMilliseconds = parseInt((remainingLength % 1000) / 100);
-				remainingSeconds = Math.floor((remainingLength / 1000) % 60);
-				remainingMinutes = Math.floor((remainingLength / (1000 * 60)) % 60);
-				remainingHours = Math.floor((remainingLength / (1000 * 60 * 60)));
-
-				remainingHours = (remainingHours < 10) ? "0" + remainingHours : remainingHours;
-				remainingMinutes = (remainingMinutes < 10) ? "0" + remainingMinutes : remainingMinutes;
-				remainingSeconds = (remainingSeconds < 10) ? "0" + remainingSeconds : remainingSeconds;
-
-				if (remainingLength < 0) {
-					clearInterval(x);
-					string = "00:00:00.0";
+				let remainingHours = 0;
+				let session_seconds = 0;
+				var break_minutes = 5;
+				var session_minutes = 25;
+				var lengthOfSession;
+				var remainingLength;
+				var endSession;
+				var remainingLength;
+				var remainingMinutes;
+				var remainingSeconds;
+				let remainingMilliseconds;
+				let x;
+				let string;
+				let paused = false;
+				function seconds(second) {
+					if (second < 10) {
+						return "0" + second;
+					}
+					return second;
 				}
 
-				string = remainingHours + ":" + remainingMinutes + ":" + remainingSeconds + "." + remainingMilliseconds;
-				$('#time-left').text(string);
+				//function to display remainingMinutes
+				function minutes(minute) {
+					if (minute < 10) {
+						return "0" + minute;
+					}
+					return minute;
+				}
+				//function to calculate, and display time 
+				function showTime() {
+					x = setInterval(() => {
+
+						remainingLength = endSession - $.now();
+
+						remainingMilliseconds = parseInt((remainingLength % 1000) / 100);
+						remainingSeconds = Math.floor((remainingLength / 1000) % 60);
+						remainingMinutes = Math.floor((remainingLength / (1000 * 60)) % 60);
+						remainingHours = Math.floor((remainingLength / (1000 * 60 * 60)));
+
+						remainingHours = (remainingHours < 10) ? "0" + remainingHours : remainingHours;
+						remainingMinutes = (remainingMinutes < 10) ? "0" + remainingMinutes : remainingMinutes;
+						remainingSeconds = (remainingSeconds < 10) ? "0" + remainingSeconds : remainingSeconds;
+
+						if (remainingLength < 0) {
+							clearInterval(x);
+							string = "00:00:00.0";
+						}
+
+						string = remainingHours + ":" + remainingMinutes + ":" + remainingSeconds + "." + remainingMilliseconds;
+						$('#time-left').text(string);
 
 
-			}, 1000);
-		}
+					}, 1000);
+				}
 
-		//function to display remainingSeconds 
+				//function to display remainingSeconds 
 
 
-		$('#indicatorContainer').radialIndicator({
-			initValue: 50
-		});
+				$('#indicatorContainer').radialIndicator({
+					initValue: 50
+				});
 
-		$('#break-increment').on('click', function () {
-			break_minutes++;
-			$('#break-length').text(break_minutes);
-		});
+				$('#break-increment').on('click', function () {
+					break_minutes++;
+					$('#break-length').text(break_minutes);
+				});
 
-		$('#break-decrement').on('click', function () {
-			if (break_minutes > 1)
-				break_minutes--;
-			$('#break-length').text(break_minutes);
-		});
+				$('#break-decrement').on('click', function () {
+					if (break_minutes > 1)
+						break_minutes--;
+					$('#break-length').text(break_minutes);
+				});
 
-		$('#session-increment').on('click', function () {
-			session_minutes++;
-			$('#session-length').text(session_minutes);
-			let string = minutes(session_minutes) + ":" + seconds(session_seconds);
-			$('#time-left').text(string);
-		});
+				$('#session-increment').on('click', function () {
+					session_minutes++;
+					$('#session-length').text(session_minutes);
+					let string = minutes(session_minutes) + ":" + seconds(session_seconds);
+					$('#time-left').text(string);
+				});
 
-		$('#session-decrement').on('click', function () {
-			if (session_minutes > 1)
-				session_minutes--;
-			$('#session-length').text(session_minutes);
-			let string = minutes(session_minutes) + ":" + seconds(session_seconds);
-			$('#time-left').text(string);
-		});
+				$('#session-decrement').on('click', function () {
+					if (session_minutes > 1)
+						session_minutes--;
+					$('#session-length').text(session_minutes);
+					let string = minutes(session_minutes) + ":" + seconds(session_seconds);
+					$('#time-left').text(string);
+				});
 
-		var startFlag = false;
-		remainingLength = session_minutes * 60 * 1000;
-		$('#start_stop').on('click', function () {
-			startFlag = !startFlag;
-			if (startFlag) {
-				$("#start_stop").html('<i class="fa fa-pause"></i>');
-				if (paused) {
-					endSession = remainingLength + $.now();
+				var startFlag = false;
+				remainingLength = session_minutes * 60 * 1000;
+				$('#start_stop').on('click', function () {
+					startFlag = !startFlag;
+					if (startFlag) {
+						$("#start_stop").html('<i class="fa fa-pause"></i>');
+						if (paused) {
+							endSession = remainingLength + $.now();
+							paused = false;
+						}
+						else {
+							endSession = $.now() + session_minutes * 60 * 1000;
+						}
+						showTime();
+
+					}
+					else if (!startFlag) {
+						$('#start_stop').html("<i class='fa fa-play'></i>");
+						paused = true;
+						remainingLength = endSession - $.now();
+						clearInterval(x);
+					}
+				});
+
+				$('#reset').on('click', function () {
+					$('#start_stop').html("<i class='fa fa-play'></i>");
+					session_minutes = 25;
+					session_seconds = 0;
+					break_minutes = 5;
+					$('#break-length').text(break_minutes);
+					$('#session-length').text(session_minutes);
+					let string = minutes(session_minutes) + ":" + seconds(session_seconds);
+					$('#time-left').text(string);
 					paused = false;
-				}
-				else {
-					endSession = $.now() + session_minutes * 60 * 1000;
-				}
-				showTime();
-
+					clearInterval(x);
+				})
 			}
-			else if (!startFlag) {
-				$('#start_stop').html("<i class='fa fa-play'></i>");
-				paused = true;
-				remainingLength = endSession - $.now();
-				clearInterval(x);
-			}
-		});
-		
-		$('#reset').on('click', function () {
-			$('#start_stop').html("<i class='fa fa-play'></i>");
-			session_minutes = 25;
-			session_seconds = 0;
-			break_minutes = 5;
-			$('#break-length').text(break_minutes);
-			$('#session-length').text(session_minutes);
-			let string = minutes(session_minutes) + ":" + seconds(session_seconds);
-			$('#time-left').text(string);
-			paused = false;
-			clearInterval(x);
-		}) 
+		)
 	</script>
 </body>
 
